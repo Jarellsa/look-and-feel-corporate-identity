@@ -1,4 +1,8 @@
 
+/* =========================================
+   1. LETTERTYPES
+========================================= */
+
 @font-face {
     font-family: Gelasio;
     src: url('../assets/Gelasio-VariableFont_wght.ttf') format('truetype');
@@ -6,8 +10,12 @@
     font-style: normal;
 }
 
-:root {
+/* =========================================
+   2. KLEUREN EN VARIABELEN
+========================================= */
 
+:root {
+    
     /* Lettertypes */
 
     --font-family: 'Gelasio', serif;
@@ -28,59 +36,58 @@
     --shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* =========================================
+   3. ALGEMENE STYLING
+========================================= */
 
-
-/* Kleuren */
-.color-1 {
-    background-color: var(--background);
-}
-
-.color-2 {
-    background-color: var(--primary-text);
-}
-
-.color-3 {
-    background-color: var(--secondary-text);
-}
-
-.color-4 {
-    background-color: var(--accent-color);
-}
-
-.color-5 {
-    background-color: var(--accent-color-light);
-}
-
-.color-6 {
-    background-color: var(--accent-color-lighter);
-}
-
-figure {
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    margin: 15px;
-}
-
-figure code {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    color: white;
-}
-
-
-
-figure code.color-1 {
-    border: 1px solid var(--primary-text);
-    color: var(--primary-text);
+* {
     box-sizing: border-box;
 }
 
-/* Typografie */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--primary-text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================================
+   4. TYPOGRAFIE
+========================================= */
+
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+    font-family: var(--font-family);
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+h1 {
+    margin-top: 0;
+    color: var(--accent-color);
+}
 
 .heading-h1 {
     font-size: var(--font-size-h1);
@@ -106,24 +113,591 @@ p {
     font-family: var(--font-body);
 }
 
+/* =========================================
+   5. LINKS
+========================================= */
 
-/* Links*/
+a {
+    text-underline-offset: 4px;
+
+    &:hover {
+        text-decoration-thickness: 2px;
+    }
+}
+
+/* Links */
 
 a {
     color: var(--accent-color);
     text-decoration: underline;
     text-underline-offset: 3px;
+
+    &:hover {
+        color: var(--accent-color-light);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 3px;
+    }
 }
 
-a:hover {
-    color: var(--accent-color-light);
+
+/* =========================================
+   6. HEADER EN NAVIGATIE
+========================================= */
+
+header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--accent-color-light);
 }
 
-a:focus-visible {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 3px;
+.logo-knop {
+    display: inline-flex;
+    align-items: center;
+
+    & img {
+        display: block;
+        width: 200px;
+        height: 68px;
+        object-fit: contain;
+    }
 }
 
+.nav {
+    flex: 1;
+
+    & ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 20px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    & a {
+        display: inline-block;
+        padding: 8px 4px;
+        color: var(--accent-color);
+        text-decoration: none;
+    }
+
+    & a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+    }
+}
+
+
+/* =========================================
+   7. GITHUB
+========================================= */
+
+.github {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px;
+    margin-left: auto;
+
+    & img {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+    }
+}
+
+
+/* =========================================
+   8. MAIN
+========================================= */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+
+/* =========================================
+   9. ZOEKFUNCTIE
+========================================= */
+
+.zoeken {
+    margin-top: 16px;
+
+    & label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+}
+
+input[type="search"] {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    padding: 14px 16px;
+    border: 1px solid var(--secondary-text);
+    border-radius: 8px;
+    background-color: var(--background);
+    color: var(--primary-text);
+    font: inherit;
+}
+
+.zoeken {
+    margin: 24px 0;
+
+    & label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    & input {
+        width: 100%;
+        max-width: 450px;
+        padding: 12px;
+        border: 1px solid var(--accent-color-light);
+        border-radius: 8px;
+        font: inherit;
+    }
+
+    & input:focus {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 2px;
+    }
+}
+
+/* Zoekfunctie */
+
+.zoeken {
+    margin: 24px 0;
+
+    & label {
+        display: block;
+        margin: 12px 0 6px;
+        font-weight: bold;
+    }
+
+    & input,
+    & select {
+        width: 100%;
+        max-width: 450px;
+        padding: 12px;
+        border: 1px solid var(--secondary-text);
+        border-radius: 6px;
+        font: inherit;
+    }
+
+    & input:focus,
+    & select:focus {
+        outline: 3px solid var(--accent-color);
+        outline-offset: 2px;
+    }
+}
+
+
+/* =========================================
+   10. VARIANTEN EN KNOPPEN
+========================================= */
+
+.variant-knoppen {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+
+    & button {
+        padding: 10px 16px;
+        border: 1px solid var(--accent-color-light);
+        border-radius: 8px;
+        background-color: var(--accent-color-lighter);
+        color: var(--accent-color);
+        font: inherit;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    & button:hover {
+        background-color: var(--accent-color-light);
+    }
+
+    & button.actief {
+        border-color: var(--accent-color-light);
+        background-color: var(--accent-color-light);
+        color: var(--accent-color);
+    }
+
+    & input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    & label {
+        display: inline-block;
+        padding: 10px 16px;
+        border: 1px solid var(--accent-color-light);
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    & input:checked + label {
+        background-color: var(--accent-color-lighter);
+        border-color: var(--secondary-text);
+    }
+
+    & label {
+        display: inline-block;
+        padding: 10px 16px;
+        margin: 4px;
+        border: 1px solid var(--accent-color-light);
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    & input:checked + label {
+        background-color: var(--accent-color-lighter);
+        border-color: var(--accent-color);
+    }
+}
+
+
+/* =========================================
+   11. ICONENSET
+========================================= */
+
+/* Iconenset */
+
+.iconen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 32px;
+
+    & article {
+        min-width: 0;
+        margin: 0;
+        padding: 20px;
+        border: 1px solid var(--accent-color-light);
+        border-radius: 8px;
+        background-color: var(--background);
+        text-align: center;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: var(--accent-color-lighter);
+        }
+
+        & img {
+            display: block;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            object-fit: contain;
+        }
+
+        & p {
+            margin-bottom: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+    }
+
+    & .icoon-fill,
+    & .icoon-regular,
+    & .icoon-diapositive {
+        display: none;
+    }
+}
+
+body:has(#fill:checked) .iconen-grid .icoon-line,
+body:has(#regular:checked) .iconen-grid .icoon-line,
+body:has(#diapositive:checked) .iconen-grid .icoon-line {
+    display: none;
+}
+
+body:has(#fill:checked) .iconen-grid .icoon-fill {
+    display: block;
+}
+
+body:has(#regular:checked) .iconen-grid .icoon-regular {
+    display: block;
+}
+
+body:has(#diapositive:checked) .iconen-grid .icoon-diapositive {
+    display: block;
+}
+
+.iconen-grid {
+    & article:focus-within {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 3px;
+    }
+
+    & article img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    & article img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    & article {
+        padding: 16px;
+        border-radius: 10px;
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        & img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        /* Verberg iconen die niet bij de zoekopdracht passen */
+
+        &[hidden] {
+            display: none;
+        }
+    }
+}
+
+
+/* =========================================
+   12. PAGINANUMMERING
+========================================= */
+
+.pagina-nummering {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 36px 0;
+
+    & a,
+    & .pagina-inactief {
+        padding: 9px 14px;
+        border: 1px solid var(--accent-color-light);
+        border-radius: 6px;
+    }
+
+    & a {
+        color: var(--accent-color);
+        background-color: var(--background);
+        text-decoration: none;
+
+        &:hover,
+        &[aria-current="page"] {
+            background-color: var(--accent-color-lighter);
+        }
+    }
+}
+
+.pagina-inactief {
+    color: var(--secondary-text);
+}
+
+
+/* =========================================
+   13. EIGENSCHAPPEN
+========================================= */
+
+.eigenschappen {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+    padding: 24px;
+    border-radius: 8px;
+    background-color: var(--accent-color-lighter);
+    text-align: center;
+
+    & p {
+        margin: 0;
+    }
+
+    & strong {
+        color: var(--accent-color);
+        font-size: 1.2rem;
+    }
+}
+
+
+/* =========================================
+   14. EXTRA INFORMATIE
+========================================= */
+
+.extra-informatie {
+    margin-top: 48px;
+    padding: 32px;
+    border-radius: 8px;
+    background-color: var(--accent-color-lighter);
+
+    & h2 {
+        margin-top: 0;
+        color: var(--accent-color);
+    }
+
+    & p {
+        max-width: 650px;
+        margin-bottom: 0;
+        line-height: 1.7;
+    }
+}
+
+
+/* =========================================
+   15. CATEGORIEËN
+========================================= */
+
+.categorieen {
+    margin-top: 48px;
+    padding: 32px;
+    border-radius: 8px;
+    background-color: var(--accent-color-lighter);
+
+    & h2 {
+        margin-top: 0;
+        color: var(--accent-color);
+    }
+
+    & > p {
+        margin-bottom: 24px;
+    }
+}
+
+.categorieen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.categorie-kaart {
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid var(--accent-color-light);
+    border-radius: 8px;
+    background-color: var(--background);
+    text-align: left;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: var(--accent-color-light);
+    }
+
+    & h3 {
+        margin-top: 0;
+        color: var(--accent-color);
+    }
+
+    & p {
+        line-height: 1.6;
+    }
+
+    & a {
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+}
+
+
+/* =========================================
+   16. OVER DE ICONEN
+========================================= */
+
+/* Over de iconenset */
+
+.over-iconen {
+    max-width: 850px;
+    margin: 48px auto;
+    padding: 24px;
+
+    & h2 {
+        color: var(--accent-color);
+    }
+
+    & p {
+        line-height: 1.8;
+    }
+
+    & a {
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+}
+
+
+/* =========================================
+   17. BIJDRAGEN
+========================================= */
+
+/* Bijdragen */
+
+.meedoen {
+    margin: 48px 0;
+    padding: 32px;
+    border-radius: 8px;
+    background-color: var(--accent-color-light);
+
+    & h2 {
+        margin-top: 0;
+        color: var(--accent-color);
+    }
+
+    & p {
+        max-width: 650px;
+        line-height: 1.7;
+    }
+
+    & a {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 12px 18px;
+        border: 1px solid var(--accent-color);
+        border-radius: 6px;
+        background-color: var(--accent-color-lighter);
+        color: var(--accent-color);
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+            background-color: var(--background);
+        }
+    }
+}
+
+
+/* =========================================
+   18. RECENTE ICONEN
+========================================= */
+
+/* Recente iconen */
+
+.recente-iconen {
+    margin: 24px 0;
+    padding: 16px;
+    background: var(--accent-color-lighter);
+    border-radius: 8px;
+}
+
+
+/* =========================================
+   19. KNOPPEN - STYLEGUIDE
+========================================= */
 
 /* knoppen */
 
@@ -138,22 +712,22 @@ input[type="button"] {
     font-family: var(--font-body);
     font-size: var(--font-size-body);
     cursor: pointer;
+
+    &:hover {
+        background-color: var(--accent-color-light);
+        border-color: var(--accent-color-light);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 3px;
+    }
 }
 
-button:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover {
-    background-color: var(--accent-color-light);
-    border-color: var(--accent-color-light);
-}
 
-button:focus-visible,
-input[type="submit"]:focus-visible,
-input[type="button"]:focus-visible {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 3px;
-}
-
+/* =========================================
+   20. FORMULIEREN EN INPUTS
+========================================= */
 
 /* typveld */
 
@@ -200,7 +774,7 @@ input[type="range"] {
 }
 
 
-/* Labels en fieldset onderdelen bij elkaar zetten*/
+/* Labels en fieldset onderdelen bij elkaar zetten */
 
 label {
     font-family: var(--font-body);
@@ -220,6 +794,10 @@ legend {
     font-weight: bold;
 }
 
+
+/* =========================================
+   21. TABELLEN
+========================================= */
 
 /* Tabellen */
 
@@ -241,6 +819,10 @@ th {
 }
 
 
+/* =========================================
+   22. LIJSTEN
+========================================= */
+
 /* Lijsten */
 
 ul,
@@ -254,6 +836,10 @@ li {
 }
 
 
+/* =========================================
+   23. QUOTES
+========================================= */
+
 /* Quotes */
 
 blockquote {
@@ -264,6 +850,64 @@ blockquote {
     font-style: italic;
 }
 
+
+/* =========================================
+   24. KLEURVLAKKEN STYLEGUIDE
+========================================= */
+
+/* Kleuren */
+
+.color-1 {
+    background-color: var(--background);
+}
+
+.color-2 {
+    background-color: var(--primary-text);
+}
+
+.color-3 {
+    background-color: var(--secondary-text);
+}
+
+.color-4 {
+    background-color: var(--accent-color);
+}
+
+.color-5 {
+    background-color: var(--accent-color-light);
+}
+
+.color-6 {
+    background-color: var(--accent-color-lighter);
+}
+
+figure {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+
+    & code {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        color: white;
+
+        &.color-1 {
+            border: 1px solid var(--primary-text);
+            color: var(--primary-text);
+            box-sizing: border-box;
+        }
+    }
+}
+
+
+/* =========================================
+   25. VLAKKEN HOMEPAGINA
+========================================= */
 
 /* alle 4 vlakken op de homepagina */
 
@@ -306,4 +950,180 @@ blockquote {
 .vlak-4 {
     background-color: var(--accent-color-lighter);
     height: 100px;
+}
+
+
+/* =========================================
+   26. FOOTER
+========================================= */
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 48px;
+    padding: 32px;
+    background-color: var(--accent-color-light);
+    color: var(--accent-color);
+
+    & > div {
+        flex: 1 1 220px;
+        min-width: 0;
+    }
+
+    & h2 {
+        margin-top: 0;
+        font-size: 1rem;
+        color: var(--accent-color);
+    }
+
+    & p,
+    & a {
+        color: var(--accent-color);
+        line-height: 1.7;
+    }
+
+    & ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    & li {
+        margin-bottom: 8px;
+    }
+}
+
+
+/* =========================================
+   27. TOETSENBORD- EN FOCUSBEDIENING
+========================================= */
+
+/* Toetsenbordbediening */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   28. MEDIA QUERIES
+========================================= */
+
+/* Tablet */
+
+@media (max-width: 800px) {
+
+    header {
+        gap: 12px;
+    }
+
+    .nav {
+        order: 3;
+        flex-basis: 100%;
+
+        & ul {
+            justify-content: flex-start;
+        }
+    }
+
+    .iconen-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .categorieen-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .eigenschappen {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobiel */
+
+@media (max-width: 520px) {
+
+    header {
+        padding: 12px 16px;
+    }
+
+    .logo-knop {
+        & img {
+            width: 160px;
+            height: auto;
+        }
+    }
+
+    .nav {
+        & ul {
+            gap: 6px 14px;
+        }
+    }
+
+    main {
+        padding: 16px;
+    }
+
+    .iconen-grid {
+        gap: 12px;
+
+        & article {
+            padding: 12px 6px;
+
+            & img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+
+    .categorieen {
+        padding: 20px 12px;
+    }
+
+    .categorieen-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categorie-kaart {
+        padding: 18px;
+    }
+
+    .extra-informatie {
+        padding: 20px;
+    }
+
+    .over-iconen {
+        padding: 12px;
+    }
+
+    .meedoen {
+        padding: 24px 16px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px 16px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .iconen-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .variant-knoppen {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
 }
